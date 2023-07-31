@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Tech Nexa</title>
+  <!--icon -->
+  <link rel="icon" href="img/logo.png" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <!---logo-->
+          <a class="navbar-brand" href="#">
+            <img src="./img/logo.png" height="50" alt="MDB Logo" loading="lazy" />
+          </a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">Informática</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gaming</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Celulares</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Audio</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav d-flex flex-row">
+            <!-- Icons -->
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="#">
+                <span class="badge badge-pill bg-danger">1</span>
+                <span><i class="fas fa-shopping-cart"></i></span>
+              </a>
+            </li>
+            <!-- Icon dropdown -->
+            <li class="nav-item me-3 me-lg-0 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+                aria-expanded="false">
+                <i class="fas fa-user"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#">Action</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+    <!-- Background image -->
+    <div class="p-5 text-center bg-image shadow-1-strong" style="
+          background-image: url('./img/banner-home.jpg');
+          height: 400px;
+        ">
+
+    </div>
+    <!-- Background image -->
+  </header>
+  <main class="mt-5">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <strong class="text-dark mr-2"> Categorias: </strong>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Ver todo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Computadoras</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Consolas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Televisores</a>
+              </li>
+            </ul>
+            <form class="d-flex input-group w-auto">
+              <input type="search" class="form-control" placeholder="Type query" aria-label="Search" />
+              <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                Search
+              </button>
+            </form>
+          </div>
+          <!--colapsible wrapper-->
+        </div>
+        <!--container wrapper-->
+      </nav>
+      <!--product section-->
+      <section class="text-center mb-4">
+        <div class="row" id="card-t">
+          <!--CARDS-->
+        </div>
+        <!-- Modal -->
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header  bg-dark">
+                <h5 class="modal-title text-light" id="exampleModalLabel">Métodos de pago</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"
+                  onclick="restaurar()"></button>
+              </div>
+
+              <div class="modal-body" style="padding: 5%; margin-bottom: 5%;">
+                <div class="row" id="cards-t">
+                  <div style="text-align: left;">
+                    <h6><i class="far fa-credit-card"></i> DÉBITO O CRÉDITO</h6>
+                    <strong class="text-dark mr-2"> Elegí una opción: </strong><br><br>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" style="justify-content: center;" src="img/tarjetas/tar1.png"
+                        class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" src="img/tarjetas/tar2.png" class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" src="img/tarjetas/tar3.png" class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" src="img/tarjetas/tar4.png" class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" src="img/tarjetas/tar5.png" class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" src="img/tarjetas/tar6.png" class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" src="img/tarjetas/tar7.png" class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" src="img/tarjetas/tar8.png" class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" src="img/tarjetas/tar9.png" class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" src="img/tarjetas/tar10.png" class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" src="img/tarjetas/tar11.png" class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                      <img onclick="openTarjeta()" src="img/tarjetas/tar12.png" class="w-50" alt="Louvre" />
+                    </div>
+                  </div>
+                </div>
+                <div id="table-tar">
+                </div>
+              </div>
+              <div class="modal-footer bg-dark" id="modal-footer">
+                <div style="text-align: left; margin: 5%; margin-top: 1%;">
+                  <strong class="text-light" style="margin-bottom: 5%; font-weight: normal">Otras formas de pago:
+                  </strong>
+                  <h6 class="text-light" style="margin-top: 5%; font-weight: normal"> <img
+                      src="img/icon/mercadopago.svg" /> Todas las opciones de pago a través de Mercado Pago </h6>
+                  <h6 class="text-light" style="font-weight: normal"> <img src="img/icon/transferencia.svg" />
+                    Transferencia bancaria </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </section>
+  </main>
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript"></script>
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  
+</body>
+
+</html>
