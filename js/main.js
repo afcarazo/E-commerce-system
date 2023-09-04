@@ -167,7 +167,7 @@ function openCardCredit() {
   let content = ` <h6 id="btn-choose-other" style= 'text-align: left; cursor: pointer; padding-left:4%;'><i class='fas fa-arrow-left'></i>  Elegí otra opción</h6><br><table class='table'><tbody>`;
   for (const term in installments) {
     content += `<ul class='list-group list-group-light list-group-small'>
-    <li class="list-group-item">${term} cuota(s) de ${installments[
+    <li class="list-group-item">${term} cuota(s) de $${installments[
       term
     ].toFixed(2)}</li>
   </ul>`;
@@ -181,7 +181,7 @@ function openCardDebit() {
   document.getElementById("modal-footer").classList.add("d-none");
   let content = ` <h6 id="btn-choose-other" style= 'text-align: left; cursor: pointer; padding-left:4%; '><i class='fas fa-arrow-left'></i>  Elegí otra opción</h6><br><table class='table'><tbody>`;
     content += `<ul class='list-group list-group-light list-group-small'>
-    <li class="list-group-item">1 cuota de ${currentProduct.price}</li>
+    <li class="list-group-item">1 cuota de $${currentProduct.price}</li>
   </ul>`;
 
   document.getElementById("table-tar").innerHTML = content;
