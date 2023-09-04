@@ -1,0 +1,18 @@
+.label-price-cart {
+    padding-right: 4%;
+    font-weight: bold;
+    text-align: end;
+}
+.nav-item{
+    cursor: pointer; 
+}
+
+[id^="modal-tar-img"]:hover {
+    cursor: pointer;
+  
+}
+.bg-image.hover-overlay.ripple.shadow-1-strong.rounded:hover{
+border: 1px solid #000000;
+}
+
+
