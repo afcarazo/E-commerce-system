@@ -1,4 +1,4 @@
-/*Variable declaration*/
+/*Variables declarations*/
 class Product {
   constructor(id, price, nombre, img) {
     this.id = id;
@@ -71,6 +71,11 @@ allItems.addEventListener("click", () => {
   products.forEach(createProductCard);
 });
 
+/*Generates the cards for products and bank cards*/
+products.forEach(createProductCard);
+tarjetas.forEach(generateBankCard);
+
+/*Filter by type of product*/ 
 function filterAndDisplayProducts(productType) {
   container.innerHTML = "";
   const filteredProducts = products.filter(
@@ -102,7 +107,6 @@ function createProductCard(item) {
        <button id="btn-cart${item.id}" type="button" class="btn btn-info"  >
        <i class="fas fa-cart-plus fa-lg"></i>
        </button>
-   
       </div>
    </div>
 </div>
@@ -120,7 +124,7 @@ function createProductCard(item) {
     addToCart(item);
   });
 }
-
+/**Add item to card */
 function addToCart(item) {
   const length = itemsCart.length + 1;
   const { price, nombre, img } = item;
@@ -153,9 +157,6 @@ function generateBankCard(item) {
   }
  
 }
-/*Generates the cards*/
-products.forEach(createProductCard);
-tarjetas.forEach(generateBankCard);
 
 /******************************** */
 /*Shows the installments of the chosen card*/
@@ -163,7 +164,7 @@ function openCardCredit() {
   document.getElementById("modal-body").classList.add("d-none");
   document.getElementById("modal-footer").classList.add("d-none");
   let installments = calculateInstallmentsCredit();
-  let content = ` <h6 id="btn-choose-other" style= 'text-align: left; cursor: pointer;padding-top:2%; padding-bottom:0px'><i class='fas fa-arrow-left'></i>  Elegí otra opción</h6><br><table class='table'><tbody>`;
+  let content = ` <h6 id="btn-choose-other" style= 'text-align: left; cursor: pointer; padding-left:4%;'><i class='fas fa-arrow-left'></i>  Elegí otra opción</h6><br><table class='table'><tbody>`;
   for (const term in installments) {
     content += `<ul class='list-group list-group-light list-group-small'>
     <li class="list-group-item">${term} cuota(s) de ${installments[
@@ -225,7 +226,7 @@ document.addEventListener("click", (event) => {
     restore();
   }
 });
-
+/**Shows the products in the cart*/
 function seeProducts() {
   const body = document.getElementById("body-modal-cart");
   body.innerHTML = "";
