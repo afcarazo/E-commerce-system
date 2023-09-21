@@ -26,7 +26,7 @@ function totalPriceI() {
   }
 }
 
-cuotasSelect.addEventListener("change", handleCuotasChange); // Agregar evento para cambio de cuotas
+cuotasSelect.addEventListener("change", handleCuotasChange); 
 
 function handleCuotasChange() {
   const selectedCuotas = parseInt(cuotasSelect.value);
@@ -72,8 +72,8 @@ function openCardCredit() {
     interest.innerHTML = `$${installments.toFixed(2)}`;
   } else {
     console.log("entre aca", totalPriceCart);
-    inte.innerHTML = `$${totalPriceCart}`;
-    interest.innerHTML = `$${totalPriceCart}`;
+    inte.innerHTML = `$${totalPriceCart.toFixed(2)}`;
+    interest.innerHTML = `$${totalPriceCart.toFixed(2)}`;
   }
 }
 
@@ -88,7 +88,8 @@ function openCardDebit() {
 }
 
 function getRandomInterest() {
-  const minInterestRate = (totalPriceCart - totalPriceCart * 0.01) / totalPriceCart; // Interés mínimo que asegura que el valor con interés sea mayor
+  const minInterestRate =
+    (totalPriceCart - totalPriceCart * 0.01) / totalPriceCart; // Interés mínimo que asegura que el valor con interés sea mayor
 
   const randomInterest = Math.random() * 0.29 + minInterestRate; // Genera un interés aleatorio entre minInterestRate y 0.29
 
@@ -110,7 +111,6 @@ function calculateInstallmentsCredit(maxTerm, totalPriceCart) {
   return totalWithInterest;
 }
 
-
 const form = document.getElementById("form-payment");
 
 form.addEventListener("submit", (event) => {
@@ -125,7 +125,13 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
     Swal.fire("Compra realizada con exito!", "Compra exitosa", "success");
     setTimeout(() => {
+      let array = [];
+      setItemsCart(array);
       window.location.href = "../index.html";
     }, 2000);
   }
 });
+
+function addEventListenersP() { 
+  
+}

@@ -1,3 +1,6 @@
+
+const form = document.getElementById("form-checkout");
+
 function createdUser() {
   const firstName = document.getElementById("firstName").value;
   const lastName = document.getElementById("lastName").value;
@@ -26,7 +29,6 @@ function createdUser() {
   console.log(user);
 }
 
-const form = document.getElementById("form-checkout");
 
 form.addEventListener("submit", (event) => {
   const password = document.getElementById("password").value;

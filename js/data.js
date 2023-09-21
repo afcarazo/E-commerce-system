@@ -1,23 +1,24 @@
+function getItemsCart() {
+  let items = [];
+  let savedCartItems = localStorage.getItem("cartItems");
 
-
-function getItemsCart() { 
-    let items = null;
-    const savedCartItems = localStorage.getItem("cartItems");
-    if (savedCartItems) {
-        items = JSON.parse(savedCartItems)
+  if (savedCartItems && savedCartItems !== "undefined") {
+    try {
+      items = JSON.parse(savedCartItems);
+    } catch (error) {
+      console.error("Error al analizar JSON:", error);
     }
-   
-    return items;
-}
-function setItemsCart(itemsCart) { 
-    localStorage.setItem("cartItems", JSON.stringify(itemsCart))
+  }
+
+  return items;
 }
 
+function setItemsCart(itemsCart) {
+  localStorage.setItem("cartItems", JSON.stringify(itemsCart));
+}
 
-const bringProducts = async () => {
-    const response = await fetch("../src/products.json");
-    const data = await response.json();
-    products.push(...data);
-    products.forEach(createProductCard);
-    console.log(products);
-  };
+async function bringProducts() {
+  const response = await fetch("../src/products.json");
+  const data = await response.json();
+  return data;
+}

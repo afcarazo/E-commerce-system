@@ -2,11 +2,8 @@
 
 let currentProduct = "";
 
-const products = [];
-
-
-bringProducts();
-
+let itemsCart = [];
+let products = [];
 const tarjetas = [...Array(12)].map((_, index) => ({
   id: index + 1,
   img: `src/img/tarjetas/tar${index + 1}.png`,
@@ -14,43 +11,19 @@ const tarjetas = [...Array(12)].map((_, index) => ({
 
 const container = document.getElementById("card-t");
 const containerModal = document.getElementById("modal-row");
-let itemsCart = [];
 const cart = document.getElementById("cart-i");
-//cart.addEventListener("click", seeProducts);
 const numberCart = document.getElementById("cart-items");
 
-
-
-window.addEventListener("load", () => {
-  let savedCartItems = getItemsCart();
-  if (savedCartItems) {
-    itemsCart = savedCartItems;
-    console.log("este",itemsCart);
-    numberCart.innerText = itemsCart.length
-  }
-});
-
 const computers = document.getElementById("computers");
-computers.addEventListener("click", () => {
-  filterAndDisplayProducts("computer");
-});
 const consoles = document.getElementById("consoles");
-consoles.addEventListener("click", () => {
-  filterAndDisplayProducts("console");
-});
 const televisions = document.getElementById("televisions");
-televisions.addEventListener("click", () => {
-  filterAndDisplayProducts("television");
-});
 const allItems = document.getElementById("all-items");
-allItems.addEventListener("click", () => {
-  container.innerHTML = "";
-  products.forEach(createProductCard);
-});
+
+handleAddEventListenersSections();
 
 /*Generates the cards for products and bank cards*/
 
-tarjetas.forEach(generateBankCard);
+/*Functions*/
 
 /*Filter by type of product*/
 function filterAndDisplayProducts(productType) {
@@ -144,10 +117,48 @@ function restore() {
   document.getElementById("modal-footer").classList.remove("d-none");
 }
 
-/*If the modal window closes by clicking outside*/
-document.addEventListener("click", (event) => {
-  const modal = document.getElementById("modalCards");
-  if (!modal.contains(event.target)) {
-    restore();
-  }
-});
+function handleAddEventListenersSections() {
+  window.addEventListener("load", () => {
+    bringProducts()
+      .then((data) => {
+        products = data;
+        products.forEach(createProductCard);
+        tarjetas.forEach(generateBankCard);
+        console.log("en main", products);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    let savedCartItems = getItemsCart();
+    if (savedCartItems) {
+      itemsCart = savedCartItems;
+      console.log("este", itemsCart);
+      numberCart.innerText = itemsCart.length;
+    }
+  });
+  computers.addEventListener("click", () => {
+    filterAndDisplayProducts("computer");
+  });
+
+  consoles.addEventListener("click", () => {
+    filterAndDisplayProducts("console");
+  });
+
+  televisions.addEventListener("click", () => {
+    filterAndDisplayProducts("television");
+  });
+
+  allItems.addEventListener("click", () => {
+    container.innerHTML = "";
+    products.forEach(createProductCard);
+  });
+
+  /*If the modal window closes by clicking outside*/
+  document.addEventListener("click", (event) => {
+    const modal = document.getElementById("modalCards");
+    if (!modal.contains(event.target)) {
+      restore();
+    }
+  });
+}

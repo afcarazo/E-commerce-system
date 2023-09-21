@@ -1,4 +1,5 @@
 const cartNumber = document.getElementById("cart-items");
+
 window.addEventListener("load", () => {
   let savedCartItems = getItemsCart();
   if (savedCartItems) {
@@ -17,7 +18,6 @@ function addToCart(item) {
   const { price, name, img } = item;
   const product = new Product(length, price, name, img);
   itemsCart.push(product);
-  console.log("agrego mod: ", product);
   cartNumber.innerText = itemsCart.length;
   setItemsCart(itemsCart);
   refreshItemsCart();
@@ -33,9 +33,8 @@ function seeProducts() {
   const noProducts = document.getElementById("no-products");
   const contResum = document.getElementById("container-resum");
 
-  totalProducts.innerText = `productos: ${itemsCart.length}`;
-
   if (itemsCart.length > 0) {
+    totalProducts.innerText = `productos: ${itemsCart.length}`;
     noProducts.style = "display: none;";
     contResum.style = "opacity:1; pointer-events: auto;";
     const productGroups = {};
@@ -63,7 +62,6 @@ function seeProducts() {
     const coupon = document.getElementById("coupon");
     coupon.addEventListener("click", () => handleCoupon(total));
 
-    console.log("products group", productGroups);
     renderCartItems(productGroups, itemCart);
   } else {
     const noProductsContainer = document.getElementById(
@@ -85,9 +83,7 @@ function renderCartItems(productGroups, itemCart) {
     const productGroup = productGroups[productName];
     const item = productGroup.product;
     const count = productGroup.count;
-    console.log("result count: ", count);
     const totalPrice = productGroup.totalPrice;
-    console.log("en el for", productGroup);
     const itemCart = document.getElementById("itemCart");
     let divItem = document.createElement("div");
     divItem.id = "itemCardsList";
@@ -152,7 +148,6 @@ function handleCoupon(total) {
   const totalPrice = document.getElementById("totalPrice");
   const coupon = document.getElementById("couponD");
   const textoIngresado = coupon.value;
-  console.log(textoIngresado);
   if (textoIngresado === "Bienvenido2023") {
     priceT = total - (total * 10) / 100;
     Toastify({
@@ -182,11 +177,12 @@ function showSpinner(itemId) {
 }
 function hideSpinner(itemId) {
   let spinner = document.getElementById(`spinner${itemId}`);
-  spinner.style.display = "none";
+  if (spinner) {
+    spinner.style.display = "none";
+  }
 }
 
 function deleteItemByName(itemName) {
-  console.log(itemName);
   itemsCart = itemsCart.filter((item) => item.name !== itemName);
   setItemsCart(itemsCart);
   Toastify({
@@ -208,13 +204,11 @@ function addEventListeners(item, count, divItem) {
       );
       btnAddItem.disabled = true;
       btnRemoveItem.disabled = true;
-      console.log(itemsCart);
       if (removedIndex !== -1) {
         showSpinner(item.id);
         setTimeout(() => {
           itemsCart.splice(removedIndex, 1);
           updateCart();
-          console.log("elimino: ", item);
           hideSpinner(item.id);
           btnAddItem.disabled = false;
           btnRemoveItem.disabled = false;
@@ -229,13 +223,11 @@ function addEventListeners(item, count, divItem) {
     showSpinner(item.id);
     setTimeout(() => {
       addToCart(item);
-      console.log("agrego: ", item);
-      console.log(itemsCart);
       hideSpinner(item.id);
       btnAddItem.disabled = false;
       btnRemoveItem.disabled = false;
       updateCart();
-    }, 2000);
+    }, 1000);
   });
 }
 
