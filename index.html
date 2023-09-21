@@ -7,16 +7,19 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>Tech Nexa</title>
   <!--icon -->
-  <link rel="icon" href="./src/img/logo.png" type="image/x-icon" />
+  <a id="homeLink" href="index.html">
+    <link rel="icon" href="./src/img/logo.png" type="image/x-icon" />
+  </a>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
   <!-- Other style -->
   <link rel="stylesheet" href="./css/style.css" />
+  <!--Toastify-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <!-- MDB -->
   <link rel="stylesheet" href="css/mdb.min.css" />
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -50,10 +53,10 @@
           </ul>
           <ul class="navbar-nav d-flex flex-row">
             <!-- Icons -->
-            <li id="cart-i" class="nav-item me-3 me-lg-0" data-mdb-toggle="modal" data-mdb-target="#modalCart">
-              <a class="nav-link" href="#">
+            <li id="cart-i" class="nav-item me-3 me-lg-0" >
+              <a class="nav-link" href="/pages/cart.html">
                 <span class="badge badge-pill bg-danger" id="cart-items">0</span>
-                <span><i class="fas fa-shopping-cart"></i></span>
+                <span ><i class="fas fa-shopping-cart"></i></span>
               </a>
             </li>
             <!-- Icon dropdown -->
@@ -90,22 +93,7 @@
     </div>
     <!-- Background image -->
   </header>
-  <!-- Modal -->
-  <div class="modal fade" id="modalCart" tabindex="-1" aria-labelledby="modalCartLabelCart" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalCartLabelCart">Carrito vacio</h5>
-          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="body-modal-cart"></div>
-        <label id="label-price-cart" class="label-price-cart">Subtotal: $0</label>
-        <div class="modal-footer">
-          <!--button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Pagar </button-->
-        </div>
-      </div>
-    </div>
-  </div>
+
   <main class="mt-5">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -141,45 +129,40 @@
           <!--CARDS-->
         </div>
         <!-- Modal -->
-        <div class="modal fade " id="modalCards" tabindex="-1" aria-labelledby="modalCardsLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header bg-dark">
-                <h5 class="modal-title text-light" id="modal-title-card">Métodos de pago</h5>
-                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        <div class="container mt-4">
+          <h1 class="text-checkout">Métodos de pago</h1>
+          <div class="row">
+              <div class="col">
+                  <h6><i class="far fa-credit-card"></i> DÉBITO O CRÉDITO</h6>
+                  <strong class="text-dark mr-2">Elegí una opción:</strong><br><br>
               </div>
-              <div id="modal-body" style="padding: 5%; margin-bottom: 5%;">
-                <div class="row" id="modal-row">
-                  <div style="text-align: left;">
-                    <h6><i class="far fa-credit-card"></i> DÉBITO O CRÉDITO</h6>
-                    <strong class="text-dark mr-2"> Elegí una opción: </strong><br><br>
-                  </div>
-                </div>
-              </div>
-              <div id="table-tar" style="padding-bottom: 0%;">
-              </div>
-            </div>
-            <div class="modal-footer bg-dark" id="modal-footer">
-              <div style="text-align: left; margin: 5%; margin-top: 1%;">
-                <strong class="text-light" style="margin-bottom: 5%; font-weight: normal">Otras formas de pago:
-                </strong>
-                <h6 class="text-light" style="margin-top: 5%; font-weight: normal"> <img
-                    src="./src/img/icon/mercadopago.svg" /> Todas las opciones de pago a través de Mercado Pago </h6>
-                <h6 class="text-light" style="font-weight: normal"> <img src="./src/img/icon/transferencia.svg" />
-                  Transferencia bancaria </h6>
-              </div>
-            </div>
           </div>
-        </div>
-    </div>
-    </div>
+      
+          <div id="table-tar" style="padding-bottom: 0%;"></div>
+      
+          <div class="row mt-4">
+              <div class="col">
+                  <strong class="text-dark" style="margin-bottom: 5%; font-weight: normal">Otras formas de pago:</strong>
+                  <h6 class="text-dark" style="margin-top: 5%; font-weight: normal">
+                      <img src="./src/img/icon/mercadopago.svg" /> Todas las opciones de pago a través de Mercado Pago
+                  </h6>
+                  <h6 class="text-dark" style="font-weight: normal">
+                      <img src="./src/img/icon/transferencia.svg" /> Transferencia bancaria
+                  </h6>
+              </div>
+          </div>
+      </div>
+      
     </section>
   </main>
+  <script src="js/data.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
   <!-- MDB -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Custom scripts -->
   <script type="text/javascript"></script>
-  <script src="js/main.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 

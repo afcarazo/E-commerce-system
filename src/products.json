@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "price": 508200,
+        "name": "Notebook Lenovo 14 Fhd Flex Ipsci7-1255u 16gb 512ssd W 11",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_755622-MLA70218103206_062023-O.webp",
+        "type": "computer"
+      },
+      {
+        "id": 2,
+        "price": 375850,
+        "name": "Smart Tv Televisor LG 55 Led 55nano80 Uhd 4k Nano Cell",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_676219-MLA51015674484_082022-O.webp",
+        "type": "television"
+      },
+      {
+       "id": 3,
+        "price": 580000,
+        "name": "Sony PlayStation 5",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_951973-MLA70217884926_062023-O.webp",
+        "type": "console"
+      },
+      {
+        "id": 4,
+        "price": 122.661,
+        "name": "Nintendo Wii 512MB",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_980225-MLA46869170967_072021-O.webp",
+        "type": "console"
+      },
+      {
+       "id": 5,
+        "price": 787.036,
+        "name": "Microsoft Xbox Series X 1TB Standard color negr",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_718831-MLA70799537227_072023-O.webp",
+        "type": "console"
+      },
+      {
+       "id": 6,
+        "price": 1181999,
+        "name": "Samsung Galaxy Z Fold5 512gb Icy Blue",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_642646-MLU71005987305_082023-O.webp",
+        "type": "phone"
+      },
+
+      {
+       "id": 7,
+        "price": 110999,
+        "name": "Xiaomi Redmi 10C Dual SIM 128 GB azul océano 4 GB RAM",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_968191-MLA49949403456_052022-O.webp",
+        "type": "phone"
+      },
+      {
+       "id": 8,
+        "price": 1019999,
+        "name": "Apple iPhone 14 Plus (128 GB) - RED",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_762161-MLM51559383657_092022-O.webp",
+        "type": "phone"
+      },
+      {
+        "id": 9,
+        "price": 499999,
+        "name": "Notebook Lenovo Ryzen 3 8gb Ram Ssd Computadora Portail 15.6 Color Iron Gray",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_968097-MLU70062760749_062023-O.webp",
+        "type": "computer"
+      },
+      {
+        "id": 10,
+        "price": 789999,
+        "name": "Notebook Hp Amd Ryzen 7 5700u 12gb 256gb Ssd 15.6 Touchscreen Tactil Windows 11 (15-ef2081ms)",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_889990-MLA51839158430_102022-O.webp",
+        "type": "computer"
+      },
+      {
+        "id": 11,
+        "price": 1094999,
+        "name": "Samsung Galaxy Book3 Pro 14 Intel Core I5 12 Núcleos 16gb Color Beige",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_799834-MLU70662507503_072023-O.webp",
+        "type": "computer"
+      },
+      {
+        "id": 12,
+        "price": 118999,
+        "name": "Smart Tv Noblex Dk43x5150pi Led Full Hd 43'",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_724772-MLA50878311168_072022-O.webp",
+        "type": "television"
+      },
+      {
+        "id": 13,
+        "price": 209999,
+        "name": "Smart TV Philips 7400 Series 50PUD7406/77 LED Android 10 4K 50 110V/240V",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_668696-MLA71172143639_082023-O.webp",
+        "type": "television"
+      },
+      {
+        "id": 14,
+        "price": 211999,
+        "name": "Smart Tv Motorola Mt50g22 Led Full Hd 50 220v",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_849715-MLA54897442270_042023-O.webp",
+        "type": "television"
+      }
+]
