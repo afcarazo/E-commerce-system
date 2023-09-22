@@ -21,8 +21,6 @@ const allItems = document.getElementById("all-items");
 
 handleAddEventListenersSections();
 
-/*Generates the cards for products and bank cards*/
-
 /*Functions*/
 
 /*Filter by type of product*/
@@ -122,6 +120,7 @@ function handleAddEventListenersSections() {
     bringProducts()
       .then((data) => {
         products = data;
+        /*Generates the cards for products and bank cards*/
         products.forEach(createProductCard);
         tarjetas.forEach(generateBankCard);
         console.log("en main", products);
