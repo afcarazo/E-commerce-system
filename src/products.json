@@ -22,14 +22,14 @@
       },
       {
         "id": 4,
-        "price": 122.661,
+        "price": 122661,
         "name": "Nintendo Wii 512MB",
         "img": "https://http2.mlstatic.com/D_NQ_NP_980225-MLA46869170967_072021-O.webp",
         "type": "console"
       },
       {
        "id": 5,
-        "price": 787.036,
+        "price": 787036,
         "name": "Microsoft Xbox Series X 1TB Standard color negr",
         "img": "https://http2.mlstatic.com/D_NQ_NP_718831-MLA70799537227_072023-O.webp",
         "type": "console"
