@@ -1,17 +1,17 @@
 class Product {
-    constructor(id, price, name, img) {
-      this.id = id;
-      this.price = price;
-      this.name = name;
-      this.img = img;
-    }
+  constructor(id, price, name, img) {
+    this.id = id;
+    this.price = price;
+    this.name = name;
+    this.img = img;
+  }
 }
-  
+
 /*Generates the card for a product*/
 function createProductCard(item) {
-    let card = document.createElement("div");
-    card.className = `col-lg-4 col-md-12 mb-4`;
-    card.innerHTML = ` 
+  let card = document.createElement("div");
+  card.className = `col-lg-4 col-md-12 mb-4`;
+  card.innerHTML = ` 
     <div class="card" >
     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
       <img class="img-card" src="${item.img}" class="img-fluid" />
@@ -35,22 +35,26 @@ function createProductCard(item) {
   </div>
   </div>
     `;
-    container.append(card);
-  
-    const btn = document.getElementById(`btn-buy${item.id}`);
-    btn.addEventListener("click", () => {
-      currentProduct = item;
-    });
-  
-    const btnCartCard = document.getElementById(`btn-cart${item.id}`);
-    btnCartCard.addEventListener("click", () => {
-      addToCart(item);
-      Toastify({
-        text: "Producto agregado!",
-  
-        avatar: `https://www.iconpacks.net/icons/2/free-add-to-cart-icon-3046-thumb.png`,
-  
-        duration: 1000,
-      }).showToast();
-    });
-  }
+  container.append(card);
+
+  const btn = document.getElementById(`btn-buy${item.id}`);
+  btn.addEventListener("click", () => {
+    currentProduct = item;
+  });
+
+  const btnCartCard = document.getElementById(`btn-cart${item.id}`);
+  btnCartCard.addEventListener("click", () => {
+    addToCart(item);
+    Toastify({
+      text: "Producto agregado!",
+
+      avatar: `https://drivecodrivingschool.co.za/assets/images/add-to-cart.jpg`,
+
+      duration: 1000,
+      style: {
+        background: "linear-gradient(to right, #0000c2, #0089bebd)",
+      },
+      className: "custom-toast",
+    }).showToast();
+  });
+}

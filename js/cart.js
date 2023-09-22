@@ -152,16 +152,26 @@ function handleCoupon(total) {
     priceT = total - (total * 10) / 100;
     Toastify({
       text: "Cupón aplicado!",
-
       duration: 1000,
+      style: {
+        background: "linear-gradient(to right, #0000c2, #0089bebd)",
+        css: {
+          fontSize: "15px",
+        },
+      },
     }).showToast();
     totalPrice.innerHTML = `$${priceT.toFixed(2)}`;
   } else {
     totalPrice.innerHTML = `$${total.toFixed(2)}`;
     Toastify({
       text: "Cupón inválido",
-
       duration: 1000,
+      style: {
+        background: "linear-gradient(to right, #0000c2, #0089bebd)",
+        css: {
+          fontSize: "15px",
+        },
+      },
     }).showToast();
   }
 }
@@ -188,6 +198,12 @@ function deleteItemByName(itemName) {
   Toastify({
     text: "Producto eliminado!",
     duration: 2000,
+    style: {
+      background: "linear-gradient(to right, #0000c2, #0088be)",
+      css: {
+        fontSize: "15px",
+      },
+    },
   }).showToast();
   updateCart();
 }
