@@ -3,16 +3,21 @@ const tarjetas = [...Array(12)].map((_, index) => ({
   img: `../src/img/tarjetas/tar${index + 1}.png`,
 }));
 
+let totalPriceCart = 0;
+
 const interest = document.getElementById("interest");
 const total = document.getElementById("total");
 const cuotasSelect = document.getElementById("cuotas");
-cuotasSelect.disabled = true;
 const containerCard = document.getElementById("container-b");
+const form = document.getElementById("form-payment");
+
+cuotasSelect.disabled = true;
 
 tarjetas.forEach(generateBankCard);
-
-let totalPriceCart = 0;
 totalPriceI();
+addEventListenersP();
+
+/* Calculate the total price of the cart*/
 function totalPriceI() {
   let itemsCart = getItemsCart();
   console.log(itemsCart);
@@ -25,8 +30,6 @@ function totalPriceI() {
     totalPriceCart = 0;
   }
 }
-
-cuotasSelect.addEventListener("change", handleCuotasChange); 
 
 function handleCuotasChange() {
   const selectedCuotas = parseInt(cuotasSelect.value);
@@ -89,16 +92,16 @@ function openCardDebit() {
 
 function getRandomInterest() {
   const minInterestRate =
-    (totalPriceCart - totalPriceCart * 0.01) / totalPriceCart; // Interés mínimo que asegura que el valor con interés sea mayor
+    (totalPriceCart - totalPriceCart * 0.01) / totalPriceCart; // Minimum interest that ensures that the value with interest is higher
 
-  const randomInterest = Math.random() * 0.29 + minInterestRate; // Genera un interés aleatorio entre minInterestRate y 0.29
+  const randomInterest = Math.random() * 0.29 + minInterestRate;
 
   return randomInterest;
 }
 
 function calculateInstallmentsCredit(maxTerm, totalPriceCart) {
   if (totalPriceCart <= 0 || maxTerm <= 0) {
-    return totalPriceCart; // Si el precio es cero o negativo, o el número de cuotas es cero o negativo, devuelve el mismo valor.
+    return totalPriceCart;
   }
 
   let totalWithInterest = 0;
@@ -111,27 +114,24 @@ function calculateInstallmentsCredit(maxTerm, totalPriceCart) {
   return totalWithInterest;
 }
 
-const form = document.getElementById("form-payment");
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (cuotasSelect.value === "") {
-    Swal.fire(
-      "Error",
-      "Por favor, seleccione una tarjeta antes de continuar.",
-      "error"
-    );
-  } else {
+function addEventListenersP() {
+  cuotasSelect.addEventListener("change", handleCuotasChange);
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
-    Swal.fire("Compra realizada con exito!", "Compra exitosa", "success");
-    setTimeout(() => {
-      let array = [];
-      setItemsCart(array);
-      window.location.href = "../index.html";
-    }, 2000);
-  }
-});
-
-function addEventListenersP() { 
-  
+    if (cuotasSelect.value === "") {
+      Swal.fire(
+        "Error",
+        "Por favor, seleccione una tarjeta antes de continuar.",
+        "error"
+      );
+    } else {
+      event.preventDefault();
+      Swal.fire("Compra realizada con exito!", "Compra exitosa", "success");
+      setTimeout(() => {
+        let array = [];
+        setItemsCart(array);
+        window.location.href = "../index.html";
+      }, 2000);
+    }
+  });
 }
